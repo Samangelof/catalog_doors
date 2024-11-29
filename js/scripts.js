@@ -121,6 +121,9 @@ function loadInitialPosts() {
         const post = createPost(fileName);
         feed.appendChild(post);
     }
+
+    addBounceToInstruction();
+    
 }
 
 // Ленивая загрузка
@@ -146,6 +149,18 @@ function setupInfiniteScroll() {
     const lastPost = document.querySelector('.post:last-child');
     if (lastPost) observer.observe(lastPost);
 }
+
+function hideInstruction() {
+    instruction.classList.add('hidden');
+}
+
+function addBounceToInstruction() {
+    instruction.classList.add('bounce');
+}
+
+feed.addEventListener('scroll', () => {
+    hideInstruction();
+});
 
 // Инициализация
 loadInitialPosts();
