@@ -129,7 +129,7 @@ function setupInfiniteScroll() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const currentCount = feed.childElementCount;
-                for (let i = currentCount + 1; i <= Math.min(currentCount + 5, totalItems); i++) {
+                for (let i = currentCount + 1; i <= Math.min(currentCount + 42, totalItems); i++) {
                     const paddedIndex = i.toString().padStart(2, '0');
                     const fileName = `images/ПОДПИСНОЙ оптовый двор каталог 2024 от 3 апреля_page-00${paddedIndex}.jpg`;
                     const post = createPost(fileName);
